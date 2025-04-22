@@ -112,13 +112,7 @@
       transform: translateY(-6px);
     }
 
-    .menu-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px 16px 0 0;
-    }
-
+    .menu-card img,
     .checkin-card img {
       width: 100%;
       height: auto;
@@ -136,14 +130,22 @@
       color: #ccc;
     }
 
-    @media (max-width: 768px) {
-      .menu-card,
-      .checkin-card {
-        margin-bottom: 20px;
-      }
+    /* Navbar tùy chỉnh cho mobile */
+    .navbar {
+      background-color: #2e2e2e !important;
     }
 
-    /* Navbar tối ưu */
+    .navbar-toggler {
+      border: none;
+      background-color: #ffc107;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
     .navbar-nav .nav-link {
       color: #fff;
       font-weight: 600;
@@ -156,6 +158,26 @@
       transition: color 0.3s ease;
     }
 
+    @media (max-width: 576px) {
+      .navbar-brand {
+        font-size: 16px;
+      }
+
+      .navbar-brand img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .navbar-nav .nav-link {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      .menu-card,
+      .checkin-card {
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -163,27 +185,29 @@
   <!-- Header tối ưu -->
   <header class="mb-5">
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center text-white" href="#" style="font-weight: bold; font-size: 20px;">
+      <div class="container-fluid px-3">
+        <a class="navbar-brand d-flex align-items-center text-white" href="#" style="font-weight: bold;">
           <img src="https://cdn.codechef.com/images/cc-logo.svg" alt="Logo" width="48" height="48" class="me-2" style="border-radius: 50%;">
           Japanese Teppanyaki
         </a>
-        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#">Trang chủ</a></li>
-            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#menu">Thực đơn</a></li>
-            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#checkin">Check-in</a></li>
-            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#booking">Đặt bàn</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Thực đơn</a></li>
+            <li class="nav-item"><a class="nav-link" href="#checkin">Check-in</a></li>
+            <li class="nav-item"><a class="nav-link" href="#booking">Đặt bàn</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
+  <!-- Nội dung chính -->
   <div class="container">
+
     <!-- Card địa điểm -->
     <div class="row custom-card g-0">
       <div class="col-md-7 p-4 d-flex flex-column justify-content-between">
@@ -212,12 +236,14 @@
             <label for="time" class="form-label">Giờ đặt</label>
             <select class="form-select" id="time" required>
               <option value="">Chọn giờ</option>
-              <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
-              <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
-              <option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
-              <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
-              <option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
-              <option>22:00</option><option>22:30</option><option>23:00</option>
+              <option>12:00</option><option>12:30</option><option>13:00</option>
+              <option>13:30</option><option>14:00</option><option>14:30</option>
+              <option>15:00</option><option>15:30</option><option>16:00</option>
+              <option>16:30</option><option>17:00</option><option>17:30</option>
+              <option>18:00</option><option>18:30</option><option>19:00</option>
+              <option>19:30</option><option>20:00</option><option>20:30</option>
+              <option>21:00</option><option>21:30</option><option>22:00</option>
+              <option>22:30</option><option>23:00</option>
             </select>
           </div>
           <div class="col-md-6">
@@ -303,4 +329,3 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
