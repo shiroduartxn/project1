@@ -2,26 +2,11 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Japanese Teppanyaki - Đặt bàn sang trọng & tiện lợi</title>
-  <meta name="description" content="Đặt bàn tại Japanese Teppanyaki - không gian sang trọng, thực đơn đa dạng, phù hợp cho hẹn hò, sinh nhật và gặp gỡ đối tác.">
-  <meta name="keywords" content="đặt bàn, nhà hàng Nhật, Teppanyaki, quận 7, lãng mạn, sinh nhật, hẹn hò, check-in">
-  <meta name="author" content="Japanese Teppanyaki Team">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://cdn.codechef.com/images/cc-logo.svg" type="image/svg+xml">
-
-  <!-- Preconnect Google Fonts (nếu cần) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Bootstrap & Icons -->
+  <title>Card Địa điểm - Còn bàn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-  <!-- Custom Styles -->
   <style>
     body {
       background-color: #2e2e2e;
@@ -157,27 +142,41 @@
         margin-bottom: 20px;
       }
     }
+
+    /* Navbar tối ưu */
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-weight: 600;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+      transition: color 0.3s ease;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Header chuyên nghiệp -->
+  <!-- Header tối ưu -->
   <header class="mb-5">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3b2d38; border-radius: 16px; padding: 12px 24px;">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="https://cdn.codechef.com/images/cc-logo.svg" alt="Logo" width="50" height="50" class="me-2">
-          <span style="font-weight: bold; font-size: 20px;">Japanese Teppanyaki</span>
+        <a class="navbar-brand d-flex align-items-center text-white" href="#" style="font-weight: bold; font-size: 20px;">
+          <img src="https://cdn.codechef.com/images/cc-logo.svg" alt="Logo" width="48" height="48" class="me-2" style="border-radius: 50%;">
+          Japanese Teppanyaki
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
-            <li class="nav-item"><a class="nav-link" href="#menu">Thực đơn</a></li>
-            <li class="nav-item"><a class="nav-link" href="#checkin">Check-in</a></li>
-            <li class="nav-item"><a class="nav-link" href="#booking">Đặt bàn</a></li>
+            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#menu">Thực đơn</a></li>
+            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#checkin">Check-in</a></li>
+            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#booking">Đặt bàn</a></li>
           </ul>
         </div>
       </div>
@@ -298,8 +297,10 @@
         </div>
       </div>
     </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
