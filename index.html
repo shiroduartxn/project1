@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Japanese Teppanyaki - Đặt bàn sang trọng & tiện lợi</title>
+  <meta name="description" content="Đặt bàn tại Japanese Teppanyaki - không gian sang trọng, thực đơn đa dạng, phù hợp cho hẹn hò, sinh nhật và gặp gỡ đối tác.">
+  <meta name="keywords" content="đặt bàn, nhà hàng Nhật, Teppanyaki, quận 7, lãng mạn, sinh nhật, hẹn hò, check-in">
+  <meta name="author" content="Japanese Teppanyaki Team">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn.codechef.com/images/cc-logo.svg" type="image/svg+xml">
+
+  <!-- Preconnect Google Fonts (nếu cần) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      background-color: #2e2e2e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .custom-card {
+      background-color: #4c3847;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 40px;
+    }
+
+    .status-badge {
+      background-color: #28a745;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .location-name {
+      font-size: 26px;
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .info-line i {
+      margin-right: 8px;
+    }
+
+    .img-col-wrapper {
+      padding: 10px;
+    }
+
+    .img-col {
+      background-image: url('https://cdn.marsvenus.com.vn/marsvenus/public/uploads/branch/20241117/IMG_6400_125510040351.webp');
+      background-size: cover;
+      background-position: center;
+      border: 4px solid #fff;
+      border-radius: 12px;
+      min-height: 240px;
+    }
+
+    .booking-card {
+      background-color: #3b2d38;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .booking-card h4 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #ffd700;
+    }
+
+    .btn-submit {
+      background-color: #ffc107;
+      border: none;
+      font-weight: bold;
+      padding: 10px 24px;
+      border-radius: 8px;
+      color: #333;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #e0a800;
+    }
+
+    .menu-section,
+    .checkin-section {
+      margin-top: 40px;
+    }
+
+    .menu-title,
+    .checkin-title {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 24px;
+      color: #ffd700;
+    }
+
+    .menu-card,
+    .checkin-card {
+      background-color: #3b2d38;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .menu-card:hover,
+    .checkin-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .checkin-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .card-body h5 {
+      font-weight: 600;
+      color: #ffd700;
+    }
+
+    .card-body p {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .menu-card,
+      .checkin-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header chuyên nghiệp -->
+  <header class="mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3b2d38; border-radius: 16px; padding: 12px 24px;">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="https://cdn.codechef.com/images/cc-logo.svg" alt="Logo" width="50" height="50" class="me-2">
+          <span style="font-weight: bold; font-size: 20px;">Japanese Teppanyaki</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Thực đơn</a></li>
+            <li class="nav-item"><a class="nav-link" href="#checkin">Check-in</a></li>
+            <li class="nav-item"><a class="nav-link" href="#booking">Đặt bàn</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Card địa điểm -->
+    <div class="row custom-card g-0">
+      <div class="col-md-7 p-4 d-flex flex-column justify-content-between">
+        <div>
+          <span class="status-badge"><i class="bi bi-check-circle-fill"></i> Còn bàn</span>
+          <div class="location-name">Lunaria Cruise (T)</div>
+          <div class="info-line mb-2"><i class="bi bi-geo-alt-fill"></i>Quận 7</div>
+          <div class="info-line"><i class="bi bi-clock-fill"></i>17:00 – 22:00 hằng ngày</div>
+        </div>
+      </div>
+      <div class="col-md-5 img-col-wrapper">
+        <div class="img-col"></div>
+      </div>
+    </div>
+
+    <!-- Thông tin đặt bàn -->
+    <div class="booking-card mt-4" id="booking">
+      <h4>Thông tin đặt bàn</h4>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="date" class="form-label">Ngày đặt</label>
+            <input type="date" class="form-control" id="date" value="2025-01-01" min="2025-01-01" max="2025-12-31" required>
+          </div>
+          <div class="col-md-6">
+            <label for="time" class="form-label">Giờ đặt</label>
+            <select class="form-select" id="time" required>
+              <option value="">Chọn giờ</option>
+              <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
+              <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+              <option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
+              <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
+              <option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
+              <option>22:00</option><option>22:30</option><option>23:00</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="event-type" class="form-label">Loại tiệc</label>
+            <select class="form-select" id="event-type" required>
+              <option value="">🎉 Chọn loại tiệc</option>
+              <option>💖 Hẹn hò ăn tối</option>
+              <option>🎂 Sinh nhật</option>
+              <option>📸 Kỷ niệm</option>
+              <option>💍 Cầu hôn</option>
+              <option>🤝 Gặp đối tác</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="guest-count" class="form-label">Số lượng người</label>
+            <input type="number" class="form-control" id="guest-count" min="1" max="30" required>
+          </div>
+        </div>
+        <div class="mt-4 text-end">
+          <button type="submit" class="btn-submit">Đặt bàn</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Thực đơn -->
+    <div class="menu-section" id="menu">
+      <h4 class="menu-title">Thực đơn gợi ý</h4>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 menu-card">
+            <img src="https://i.ibb.co/fTYp2B7/menu1.jpg" alt="Menu 1">
+            <div class="card-body">
+              <h5>Set Hẹn hò</h5>
+              <p>Bữa tối lãng mạn với khai vị, món chính và tráng miệng cho 2 người.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 menu-card">
+            <img src="https://i.ibb.co/rGfvnGkT/menu2.jpg" alt="Menu 2">
+            <div class="card-body">
+              <h5>Set Sinh nhật</h5>
+              <p>Thực đơn phong phú phù hợp cho nhóm bạn hoặc gia đình nhỏ.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 menu-card">
+            <img src="https://i.ibb.co/dw15M0vM/menu3.jpg" alt="Menu 3">
+            <div class="card-body">
+              <h5>Set Đối tác</h5>
+              <p>Bữa tối sang trọng cho dịp tiếp khách, ký kết hay gặp gỡ quan trọng.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Khách hàng check-in -->
+    <div class="checkin-section" id="checkin">
+      <h4 class="checkin-title">Khách hàng đã check-in</h4>
+      <div class="row g-4">
+        <div class="col-sm-6 col-md-4">
+          <div class="checkin-card">
+            <img src="https://i.ibb.co/9kCGXDdz/decor1.jpg" alt="Check-in 1">
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="checkin-card">
+            <img src="https://i.ibb.co/TxZhLhjX/decor2.jpg" alt="Check-in 2">
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="checkin-card">
+            <img src="https://i.ibb.co/KxCqKLVS/decor3.jpg" alt="Check-in 3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
