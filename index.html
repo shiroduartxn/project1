@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <style>
+    <style>
     body {
       background-color: #2e2e2e;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
     }
-        footer {
+
+    footer {
       background-color: #111;
       color: #ccc;
       padding: 40px 20px;
@@ -110,146 +111,147 @@
         padding: 0 10px;
       }
 
-    .custom-card {
-      background-color: #4c3847;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      margin-bottom: 40px;
-    }
+      .custom-card {
+        background-color: #4c3847;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        margin-bottom: 40px;
+      }
 
-    .status-badge {
-      background-color: #28a745;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 12px;
-    }
+      .status-badge {
+        background-color: #28a745;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
 
-    .location-name {
-      font-size: 26px;
-      font-family: 'Georgia', serif;
-      font-style: italic;
-      margin-bottom: 16px;
-    }
+      .location-name {
+        font-size: 26px;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+        margin-bottom: 16px;
+      }
 
-    .info-line i {
-      margin-right: 8px;
-    }
+      .info-line i {
+        margin-right: 8px;
+      }
 
-    .img-col-wrapper {
-      padding: 10px;
-    }
+      .img-col-wrapper {
+        padding: 10px;
+      }
 
-    .img-col {
-      background-image: url('https://cdn.marsvenus.com.vn/marsvenus/public/uploads/branch/20241117/IMG_6400_125510040351.webp');
-      background-size: cover;
-      background-position: center;
-      border: 4px solid #fff;
-      border-radius: 12px;
-      min-height: 240px;
-    }
+      .img-col {
+        background-image: url('https://cdn.marsvenus.com.vn/marsvenus/public/uploads/branch/20241117/IMG_6400_125510040351.webp');
+        background-size: cover;
+        background-position: center;
+        border: 4px solid #fff;
+        border-radius: 12px;
+        min-height: 240px;
+      }
 
-    .booking-card {
-      background-color: #3b2d38;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    }
+      .booking-card {
+        background-color: #3b2d38;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      }
 
-    .booking-card h4 {
-      margin-bottom: 20px;
-      font-weight: 600;
-      color: #ffd700;
-    }
+      .booking-card h4 {
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #ffd700;
+      }
 
-    .btn-submit {
-      background-color: #ffc107;
-      border: none;
-      font-weight: bold;
-      padding: 10px 24px;
-      border-radius: 8px;
-      color: #333;
-      transition: background-color 0.3s;
-    }
+      .btn-submit {
+        background-color: #ffc107;
+        border: none;
+        font-weight: bold;
+        padding: 10px 24px;
+        border-radius: 8px;
+        color: #333;
+        transition: background-color 0.3s;
+      }
 
-    .btn-submit:hover {
-      background-color: #e0a800;
-    }
+      .btn-submit:hover {
+        background-color: #e0a800;
+      }
 
-    .menu-section,
-    .checkin-section {
-      margin-top: 40px;
-    }
+      .menu-section,
+      .checkin-section {
+        margin-top: 40px;
+      }
 
-    .menu-title,
-    .checkin-title {
-      margin-bottom: 20px;
-      font-weight: 600;
-      font-size: 24px;
-      color: #ffd700;
-    }
+      .menu-title,
+      .checkin-title {
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-size: 24px;
+        color: #ffd700;
+      }
 
-    .menu-card,
-    .checkin-card {
-      background-color: #3b2d38;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-      overflow: hidden;
-    }
+      .menu-card,
+      .checkin-card {
+        background-color: #3b2d38;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+      }
 
-    .menu-card:hover,
-    .checkin-card:hover {
-      transform: translateY(-6px);
-    }
+      .menu-card:hover,
+      .checkin-card:hover {
+        transform: translateY(-6px);
+      }
 
-    .menu-card img,
-    .checkin-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px;
-    }
+      .menu-card img,
+      .checkin-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 16px;
+      }
 
-    .card-body h5 {
-      font-weight: 600;
-      color: #ffd700;
-    }
+      .card-body h5 {
+        font-weight: 600;
+        color: #ffd700;
+      }
 
-    .card-body p {
-      font-size: 14px;
-      color: #ccc;
-    }
+      .card-body p {
+        font-size: 14px;
+        color: #ccc;
+      }
 
-    .navbar {
-      background-color: #2e2e2e !important;
-    }
+      .navbar {
+        background-color: #2e2e2e !important;
+      }
 
-    .navbar-toggler {
-      border: none;
-      background-color: #ffc107;
-      padding: 6px 10px;
-      border-radius: 6px;
-    }
+      .navbar-toggler {
+        border: none;
+        background-color: #ffc107;
+        padding: 6px 10px;
+        border-radius: 6px;
+      }
 
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
 
-    .navbar-nav .nav-link {
-      color: #fff;
-      font-weight: 600;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+      .navbar-nav .nav-link {
+        color: #fff;
+        font-weight: 600;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
 
-    .navbar-nav .nav-link:hover {
-      color: #ffc107 !important;
-      transition: color 0.3s ease;
+      .navbar-nav .nav-link:hover {
+        color: #ffc107 !important;
+        transition: color 0.3s ease;
+      }
     }
 
     @media (max-width: 576px) {
