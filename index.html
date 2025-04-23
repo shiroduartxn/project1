@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
     body {
@@ -13,6 +14,26 @@
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       padding: 40px 20px;
+    }
+        footer {
+      background-color: #1f1f1f;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+      border-radius: 16px;
+    }
+
+    footer h5 {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    footer p {
+      margin: 6px 0;
+      color: #ccc;
+      font-size: 15px;
     }
 
     .custom-card {
@@ -130,7 +151,6 @@
       color: #ccc;
     }
 
-    /* Navbar tùy chỉnh cho mobile */
     .navbar {
       background-color: #2e2e2e !important;
     }
@@ -182,7 +202,6 @@
 </head>
 <body>
 
-  <!-- Header tối ưu -->
   <header class="mb-5">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid px-3">
@@ -205,11 +224,9 @@
     </nav>
   </header>
 
-  <!-- Nội dung chính -->
   <div class="container">
 
-    <!-- Card địa điểm -->
-    <div class="row custom-card g-0">
+    <div class="row custom-card g-0" data-aos="zoom-in">
       <div class="col-md-7 p-4 d-flex flex-column justify-content-between">
         <div>
           <span class="status-badge"><i class="bi bi-check-circle-fill"></i> Còn bàn</span>
@@ -223,8 +240,7 @@
       </div>
     </div>
 
-    <!-- Thông tin đặt bàn -->
-    <div class="booking-card mt-4" id="booking">
+    <div class="booking-card mt-4" id="booking" data-aos="fade-up">
       <h4>Thông tin đặt bàn</h4>
       <form>
         <div class="row g-3">
@@ -236,14 +252,8 @@
             <label for="time" class="form-label">Giờ đặt</label>
             <select class="form-select" id="time" required>
               <option value="">Chọn giờ</option>
-              <option>12:00</option><option>12:30</option><option>13:00</option>
-              <option>13:30</option><option>14:00</option><option>14:30</option>
-              <option>15:00</option><option>15:30</option><option>16:00</option>
-              <option>16:30</option><option>17:00</option><option>17:30</option>
-              <option>18:00</option><option>18:30</option><option>19:00</option>
-              <option>19:30</option><option>20:00</option><option>20:30</option>
-              <option>21:00</option><option>21:30</option><option>22:00</option>
-              <option>22:30</option><option>23:00</option>
+              <!-- Thêm các khung giờ ở đây -->
+              <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
             </select>
           </div>
           <div class="col-md-6">
@@ -268,11 +278,10 @@
       </form>
     </div>
 
-    <!-- Thực đơn -->
     <div class="menu-section" id="menu">
       <h4 class="menu-title">Thực đơn gợi ý</h4>
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="card h-100 menu-card">
             <img src="https://i.ibb.co/fTYp2B7/menu1.jpg" alt="Menu 1">
             <div class="card-body">
@@ -281,7 +290,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="card h-100 menu-card">
             <img src="https://i.ibb.co/rGfvnGkT/menu2.jpg" alt="Menu 2">
             <div class="card-body">
@@ -290,7 +299,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
           <div class="card h-100 menu-card">
             <img src="https://i.ibb.co/dw15M0vM/menu3.jpg" alt="Menu 3">
             <div class="card-body">
@@ -302,21 +311,20 @@
       </div>
     </div>
 
-    <!-- Khách hàng check-in -->
     <div class="checkin-section" id="checkin">
       <h4 class="checkin-title">Khách hàng đã check-in</h4>
       <div class="row g-4">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="checkin-card">
             <img src="https://i.ibb.co/9kCGXDdz/decor1.jpg" alt="Check-in 1">
           </div>
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="checkin-card">
             <img src="https://i.ibb.co/TxZhLhjX/decor2.jpg" alt="Check-in 2">
           </div>
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
           <div class="checkin-card">
             <img src="https://i.ibb.co/KxCqKLVS/decor3.jpg" alt="Check-in 3">
           </div>
@@ -325,7 +333,20 @@
     </div>
 
   </div>
-
+<!-- Footer -->
+  <footer data-aos="fade-up">
+    <h5>𝐒𝟕𝟗 - 𝐉𝐚𝐩𝐚𝐧𝐞𝐬𝐞 𝐓𝐞𝐩𝐩𝐚𝐧𝐲𝐚𝐤𝐢</h5>
+    <p>Floor L79, Landmark 81 Building, Ho Chi Minh City</p>
+    <p>🕘 Opening time: 11:00 – 23:00 (last order 22:00)</p>
+    <p>📞 +84 91 125 94 49</p>
+    <p>✉️ s79skyline@gmail.com</p>
+    <p>💌 Đặt bàn ngay để có chỗ ngồi đẹp nhất!</p>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
+
