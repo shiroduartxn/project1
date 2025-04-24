@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         body {
@@ -277,6 +278,45 @@
                 margin-bottom: 20px;
             }
         }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .open-modal-btn:hover {
+            background-color: #f59e0b;
+        }
+
+        /* Nền tối cho modal */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Modal content với chiều rộng và chiều cao là 95% màn hình */
+        .modal-content {
+            width: 95vw;
+            /* 95% chiều rộng màn hình */
+            height: 95vh;
+            /* 95% chiều cao màn hình */
+            overflow-y: auto;
+            /* Thêm cuộn dọc khi nội dung dài */
+            max-width: 95vw;
+            /* Đảm bảo chiều rộng tối đa là 95% màn hình */
+            max-height: 95vh;
+            /* Đảm bảo chiều cao tối đa là 95% màn hình */
+        }
     </style>
 </head>
 
@@ -418,7 +458,7 @@
                 </div>
 
                 <div class="mt-4 text-center">
-                    <button type="submit" class="btn-submit">Đặt bàn</button>
+                    <button id="open-modal-btn" class="btn-submit">Đặt bàn</button>
                 </div>
             </form>
         </div>
@@ -524,11 +564,141 @@
         </div>
 
     </div>
+
+    <!-- Model -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <div class="text-white min-h-screen font-sans relative">
+        <!-- Modal overlay -->
+        <div id="modal-overlay"
+            class="fixed inset-0 z-40 modal-overlay backdrop-blur-sm flex items-center justify-center fade-in hidden">
+
+            <!-- Modal content -->
+            <div
+                class="modal-border bg-gray-800 border-2 border-yellow-400 pt-4 px-2 pb-6 rounded-2xl text-center space-y-4 relative fade-in shadow-2xl modal-content">
+
+                <!-- Nút đóng modal -->
+                <button id="close-modal-btn"
+                    class="absolute top-3 right-4 text-yellow-400 text-2xl cursor-pointer hover:text-yellow-200">&times;</button>
+
+                <!-- Icon -->
+                <div class="flex justify-center mt-0 pt-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-400" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <h2 class="text-2xl font-bold font-serif">Hoàn tất đặt bàn</h2>
+                <p class="text-sm">Đặt tiệc của bạn sắp hoàn tất. Vui lòng hoàn tất thanh toán trong <span
+                        class="text-yellow-400 font-semibold">30 phút</span> để hoàn thành việc đặt bàn.</p>
+
+                <div class="flex items-center justify-center gap-2 mt-3">
+                    <span>Mã đặt bàn:</span>
+                    <span class="text-xl font-bold text-yellow-300 tracking-wide">AR24134932</span>
+                </div>
+
+                <!-- Mã QR -->
+                <div class="mt-4">
+                    <p class="italic text-blue-500" style="font-size: 15px;margin-bottom:20px;">
+                        Sử dụng App Internet Banking hoặc ứng dụng camera hỗ trợ QR code để quét mã
+                    </p>
+                    <img src="https://img.vietqr.io/image/970436-1040508395-compact.png?amount=100000&addInfo=MK+742305&accountName=TRAN+DUC+NHAT"
+                        alt="Mã QR thanh toán" class="mx-auto mt-2 w-32 h-32" />
+                </div>
+
+                <div class="flex items-center justify-center gap-2 mt-2">
+                    <span>Tiền cọc:</span>
+                    <span class="text-2xl font-bold text-yellow-400">1.000.000 VND</span>
+                </div>
+
+                <ul class="text-sm text-left mt-3 space-y-3">
+                    <li class="flex items-start space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Hoa, bánh kem và dịch vụ đi kèm cần thanh toán trước</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Không hoàn tiền – được trừ vào hoá đơn</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Có thể thay đổi ngày hoặc giờ sau khi thanh toán, vui lòng liên hệ hotline hỗ trợ</span>
+                    </li>
+                </ul>
+
+                <!-- Nút xác nhận -->
+                <button id="confirm-btn"
+                    class="inline-block mt-4 bg-gradient-to-r from-yellow-500 to-yellow-300 text-black font-bold px-6 py-2 rounded-full hover:from-yellow-400 hover:to-yellow-200 cursor-pointer transition">
+                    <!-- Sử dụng icon check chuyên nghiệp hơn từ Heroicons -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 text-yellow-600"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Tôi đã thanh toán
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openModalBtn = document.getElementById('open-modal-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalOverlay = document.getElementById('modal-overlay');
+
+        openModalBtn.addEventListener('click', function (e) {
+            e.preventDefault(); // Ngăn form submit hoặc reload trang
+
+            // Lấy tất cả input và select cần kiểm tra
+            const name = document.getElementById('customer-name');
+            const phone = document.getElementById('phone-number');
+            const date = document.getElementById('date');
+            const time = document.getElementById('time');
+            const eventType = document.getElementById('event-type');
+            const guestCount = document.getElementById('guest-count');
+
+            // Kiểm tra từng trường xem có hợp lệ không
+            if (
+                name.value.trim() === '' ||
+                !phone.value.match(/^[0-9]{10,11}$/) ||
+                date.value === '' ||
+                time.value === '' ||
+                eventType.value === '' ||
+                guestCount.value === '' ||
+                parseInt(guestCount.value) < 1
+            ) {
+                alert('Vui lòng điền đầy đủ và đúng thông tin trước khi đặt bàn.');
+                return;
+            }
+
+            // Nếu hợp lệ thì mở modal
+            modalOverlay.classList.remove('hidden');
+            modalOverlay.classList.add('flex');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('hidden');
+            modalOverlay.classList.remove('flex');
+        });
+    </script>
+
+    <!-- end Model -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+
     <script>
         // Lấy ngày hôm nay
         const today = new Date();
