@@ -490,6 +490,7 @@
   </script>
 <script>
   function addSet() {
+    event.preventDefault(); // Ngăn trang cuộn lên
     const setSelect = document.getElementById("setSelect");
     const quantityInput = document.getElementById("setQuantity");
     const tableBody = document.getElementById("setTableBody");
