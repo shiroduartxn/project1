@@ -1,568 +1,614 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Card Địa điểm - Còn bàn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Card Địa điểm - Còn bàn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <style>
-    body {
-      background-color: #2e2e2e;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-    }
+        body {
+            background-color: #2e2e2e;
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+        }
 
-    footer {
-      background-color: #111;
-      color: #ccc;
-      padding: 40px 20px;
-      margin-top:40px;
-    }
+        footer {
+            background-color: #111;
+            color: #ccc;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
 
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: auto;
-      gap: 30px;
-    }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            gap: 30px;
+        }
 
-    .footer-col {
-      flex: 1;
-      min-width: 280px;
-    }
+        .footer-col {
+            flex: 1;
+            min-width: 280px;
+        }
 
-    .footer-col h3 {
-      color: white;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
+        .footer-col h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
 
-    .footer-col p,
-    .footer-col strong {
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 5px 0;
-    }
+        .footer-col p,
+        .footer-col strong {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
 
-    .footer-col i {
-      margin-right: 8px;
-      color: #ffcc00;
-    }
+        .footer-col i {
+            margin-right: 8px;
+            color: #ffcc00;
+        }
 
-    .social-icons {
-      margin-top: 15px;
-    }
+        .social-icons {
+            margin-top: 15px;
+        }
 
-    .social-icons i {
-      font-size: 20px;
-      margin-right: 12px;
-      color: white;
-      transition: 0.3s;
-    }
+        .social-icons i {
+            font-size: 20px;
+            margin-right: 12px;
+            color: white;
+            transition: 0.3s;
+        }
 
-    .social-icons i:hover {
-      color: #ffcc00;
-    }
+        .social-icons i:hover {
+            color: #ffcc00;
+        }
 
-    .gov-icon {
-      margin-top: 20px;
-      height: 40px;
-    }
+        .gov-icon {
+            margin-top: 20px;
+            height: 40px;
+        }
 
-    .email-form input {
-      padding: 10px;
-      width: 100%;
-      margin: 10px 0;
-      box-sizing: border-box;
-      border: none;
-    }
+        .email-form input {
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: none;
+        }
 
-    .email-form button {
-      padding: 10px 20px;
-      background: none;
-      color: white;
-      border: 1px solid white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+        .email-form button {
+            padding: 10px 20px;
+            background: none;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .email-form button:hover {
-      background-color: white;
-      color: #111;
-    }
+        .email-form button:hover {
+            background-color: white;
+            color: #111;
+        }
 
-    iframe {
-      width: 100%;
-      border: none;
-      overflow: hidden;
-      margin-top: 15px;
-    }
+        iframe {
+            width: 100%;
+            border: none;
+            overflow: hidden;
+            margin-top: 15px;
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    padding: 0 10px;
-  }
-}
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                padding: 0 10px;
+            }
+        }
 
-      .custom-card {
-        background-color: #4c3847;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        margin-bottom: 40px;
-      }
+        .custom-card {
+            background-color: #4c3847;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 40px;
+        }
 
-      .status-badge {
-        background-color: #28a745;
-        color: white;
-        padding: 6px 12px;
-        border-radius: 30px;
-        font-size: 14px;
-        font-weight: 600;
-        display: inline-block;
-        margin-bottom: 12px;
-      }
+        .status-badge {
+            background-color: #28a745;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
 
-      .location-name {
-        font-size: 26px;
-        font-family: 'Georgia', serif;
-        font-style: italic;
-        margin-bottom: 16px;
-      }
+        .location-name {
+            font-size: 26px;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
 
-      .info-line i {
-        margin-right: 8px;
-      }
+        .info-line i {
+            margin-right: 8px;
+        }
 
-      .img-col-wrapper {
-        padding: 10px;
-      }
+        .img-col-wrapper {
+            padding: 10px;
+        }
 
-      .img-col {
-        background-image: url('https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-6/485987045_635729199308448_4473038929615279960_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4tz1Ru40yXUQ7kNvwFXlp9B&_nc_oc=Adm8z5GoDbELzfoExYKfSxREkxYOd4Hr0smsqsnZOSOfPBWT8t6ArNBxf7crliZ6fos&_nc_zt=23&_nc_ht=scontent-sin2-1.xx&_nc_gid=Gt90nAJCM-VFdM6Qd0HG6w&oh=00_AfFTROntXcqKGN8Sf41DiwRI4ziTsCAqVqfK3kAyMi7N4Q&oe=680F8B95');
-        background-size: cover;
-        background-position: center;
-        border: 4px solid #fff;
-        border-radius: 12px;
-        min-height: 300px;
-      }
+        .img-col {
+            background-image: url('https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-6/485987045_635729199308448_4473038929615279960_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4tz1Ru40yXUQ7kNvwFXlp9B&_nc_oc=Adm8z5GoDbELzfoExYKfSxREkxYOd4Hr0smsqsnZOSOfPBWT8t6ArNBxf7crliZ6fos&_nc_zt=23&_nc_ht=scontent-sin2-1.xx&_nc_gid=Gt90nAJCM-VFdM6Qd0HG6w&oh=00_AfFTROntXcqKGN8Sf41DiwRI4ziTsCAqVqfK3kAyMi7N4Q&oe=680F8B95');
+            background-size: cover;
+            background-position: center;
+            border: 4px solid #fff;
+            border-radius: 12px;
+            min-height: 300px;
+        }
 
-      .booking-card {
-        background-color: #3b2d38;
-        border-radius: 16px;
-        padding: 24px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-      }
+        .booking-card {
+            background-color: #3b2d38;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
 
-      .booking-card h4 {
-        margin-bottom: 20px;
-        font-weight: 600;
-        color: #ffd700;
-      }
+        .booking-card h4 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #ffd700;
+        }
 
-      .btn-submit {
-        background-color: #ffc107;
-        border: none;
-        font-weight: bold;
-        padding: 10px;
-        width: 100%;
-        border-radius: 8px;
-        color: #333;
-        transition: background-color 0.3s;
-      }
+        .btn-submit {
+            background-color: #ffc107;
+            border: none;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+            border-radius: 8px;
+            color: #333;
+            transition: background-color 0.3s;
+        }
 
-      .btn-submit:hover {
-        background-color: #e0a800;
-      }
+        .btn-submit:hover {
+            background-color: #e0a800;
+        }
 
-      .menu-section,
-      .checkin-section {
-        margin-top: 40px;
-      }
+        .menu-section,
+        .checkin-section {
+            margin-top: 40px;
+        }
 
-      .menu-title,
-      .checkin-title {
-        margin-bottom: 20px;
-        font-weight: 600;
-        font-size: 24px;
-        color: #ffd700;
-      }
+        .menu-title,
+        .checkin-title {
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 24px;
+            color: #ffd700;
+        }
 
-      .menu-card,
-      .checkin-card {
-        background-color: #3b2d38;
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
-        overflow: hidden;
-      }
+        .menu-card,
+        .checkin-card {
+            background-color: #3b2d38;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
 
-      .menu-card:hover,
-      .checkin-card:hover {
-        transform: translateY(-6px);
-      }
+        .menu-card:hover,
+        .checkin-card:hover {
+            transform: translateY(-6px);
+        }
 
-      .menu-card img,
-      .checkin-card img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 16px;
-      }
+        .menu-card img,
+        .checkin-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
 
-      .card-body h5 {
-        font-weight: 600;
-        color: #ffd700;
-      }
+        .card-body h5 {
+            font-weight: 600;
+            color: #ffd700;
+        }
 
-      .card-body p {
-        font-size: 14px;
-        color: #ccc;
-      }
+        .card-body p {
+            font-size: 14px;
+            color: #ccc;
+        }
 
-      .navbar {
-        background-color: #2e2e2e !important;
-      }
+        .navbar {
+            background-color: #2e2e2e !important;
+        }
 
-      .navbar-toggler {
-        padding:0;
-        border: none;
-  
-      }
+        .navbar-toggler {
+            padding: 0;
+            border: none;
 
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
+        }
 
-      .navbar-nav .nav-link {
-        color: #fff;
-        font-weight: 600;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
 
-      .navbar-nav .nav-link:hover {
-        color: #ffc107 !important;
-        transition: color 0.3s ease;
-      }
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: 600;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
-    @media (max-width: 576px) {
-      .navbar-brand {
-        font-size: 16px;
-        
-      }
-     
+        .navbar-nav .nav-link:hover {
+            color: #ffc107 !important;
+            transition: color 0.3s ease;
+        }
 
-      .navbar-brand img {
-        width: 36px;
-        height: 36px;
-      }
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 16px;
 
-      .navbar-nav .nav-link {
-        padding: 8px 12px;
-        font-size: 14px;
-      }
+            }
 
-      .menu-card,
-      .checkin-card {
-        margin-bottom: 20px;
-      }
-    }
-  </style>
+
+            .navbar-brand img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            .menu-card,
+            .checkin-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header class="mb-2">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid px-3">
-      <a class="navbar-brand d-flex align-items-center text-white" href="#" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, sans-serif;">
-<img 
-  src="https://scontent-sin11-2.xx.fbcdn.net/v/t39.30808-6/474616675_592089500339085_6621828307805457876_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Gel9i833YfAQ7kNvwHF3hTz&_nc_oc=Admwu6GWlGaGfbuTcwstgHWjxQTCTlyLHZxZK66LoYngle5S5Pypc_TCLBpMk1vePQ8&_nc_zt=23&_nc_ht=scontent-sin11-2.xx&_nc_gid=xnbVvO46LlbNHxaBogWiDw&oh=00_AfGy0aj_QBeRujAwWwjZ-gJydCp4rf0b6yab_TGFvDfmtw&oe=680EAEA0" 
-  alt="Avatar"
-  style="
+    <header class="mb-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-3">
+                <a class="navbar-brand d-flex align-items-center text-white" href="#"
+                    style="font-weight: bold; font-family: 'Segoe UI', Tahoma, sans-serif;">
+                    <img src="https://scontent-sin11-2.xx.fbcdn.net/v/t39.30808-6/474616675_592089500339085_6621828307805457876_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Gel9i833YfAQ7kNvwHF3hTz&_nc_oc=Admwu6GWlGaGfbuTcwstgHWjxQTCTlyLHZxZK66LoYngle5S5Pypc_TCLBpMk1vePQ8&_nc_zt=23&_nc_ht=scontent-sin11-2.xx&_nc_gid=xnbVvO46LlbNHxaBogWiDw&oh=00_AfGy0aj_QBeRujAwWwjZ-gJydCp4rf0b6yab_TGFvDfmtw&oe=680EAEA0"
+                        alt="Avatar" style="
     width: 60px;
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid white;
-  "
->
+  ">
 
-  <span style="margin-left:10px;font-size: 20px; font-style: italic; color: #ffffffcc; letter-spacing: 1px;">
-    Japanese Teppanyaki
-  </span>
-</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#menu">Thực đơn</a></li>
-          <li class="nav-item"><a class="nav-link" href="#checkin">Check-in</a></li>
-          <li class="nav-item"><a class="nav-link" href="#booking">Đặt bàn</a></li>
-          <li class="nav-item"><a class="nav-link" href="#footer">Liên hệ</a></li> <!-- Thêm mục Liên hệ -->
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-  <div class="container">
-
-    <div class="row custom-card g-0" data-aos="zoom-in">
-      <div class="col-md-7 p-4 d-flex flex-column justify-content-between">
-        <div>
-          <span class="status-badge"><i class="bi bi-check-circle-fill"></i> Còn bàn</span>
-          <div class="location-name">S79 - Japanese Teppanyaki</div>
-          <div class="info-line mb-2"><i class="bi bi-geo-alt-fill"></i>Tầng 79, Landmark 81</div>
-          <div class="info-line"><i class="bi bi-clock-fill"></i>11:00 – 23:00 hằng ngày</div>
-        </div>
-      </div>
-      <div class="col-md-5 img-col-wrapper">
-        <div class="img-col"></div>
-      </div>
-    </div>
-
-    <div class="booking-card mt-4" id="booking" data-aos="fade-up" data-aos-offset="10">
-      <h4>Thông tin đặt bàn</h4>
-      <form>
-      <div class="row g-3" style="margin-bottom:10px;">
-  <div class="col-md-6">
-    <label for="customer-name" class="form-label">Người đặt bàn</label>
-    <input type="text" class="form-control" id="customer-name" placeholder="Nhập họ tên" required>
-  </div>
-  <div class="col-md-6">
-    <label for="phone-number" class="form-label">Số điện thoại</label>
-    <input type="tel" class="form-control" id="phone-number" placeholder="Nhập số điện thoại" pattern="[0-9]{10,11}" required>
-  </div>
-</div>
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label for="date" class="form-label">Ngày đặt</label>
-            <input type="date" class="form-control" id="date" value="2025-01-01" min="2025-01-01" max="2025-12-31" required>
-          </div>
-          <div class="col-md-6">
-            <label for="time" class="form-label">Giờ đặt</label>
-            <select class="form-select" id="time" required>
-              <option value="">Chọn giờ</option>
-              <!-- Thêm các khung giờ ở đây -->
-              <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="event-type" class="form-label">Loại tiệc</label>
-            <select class="form-select" id="event-type" required>
-              <option value="">🎉 Chọn loại tiệc</option>
-              <option>💖 Hẹn hò ăn tối</option>
-              <option>🎂 Sinh nhật</option>
-              <option>📸 Kỷ niệm</option>
-              <option>💍 Cầu hôn</option>
-              <option>🤝 Gặp đối tác</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="guest-count" class="form-label">Số lượng người</label>
-            <input type="number" class="form-control" id="guest-count" min="1" max="30" required>
-          </div>
-        </div>
-       <div class="container mt-5">
-  <h5 class="text-warning" style="text-align:center;">Chọn Set Menu</h5>
-  <div class="row mb-3">
-    <div class="col-md-6">
-      <label for="setSelect" class="form-label">Loại Set</label>
-      <select class="form-select" id="setSelect">
-        <option value="" disabled selected>-- Chọn Set Menu --</option>
-        <option value="Set TAE COURSE">Set TAE COURSE</option>
-        <option value="Set KAORI COURSE">Set KAORI COURSE</option>
-        <option value="Set GIN COURSE">Set GIN COURSE</option>
-        <option value="Set KOBE COURSE">Set KOBE COURSE</option>
-      </select>
-    </div>
-    <div class="col-md-3" style="margin-top:12px;" >
-      <label for="setQuantity" class="form-label">Số lượng</label>
-      <input type="number" class="form-control" id="setQuantity" min="1" value="1">
-    </div>
-    <div class="col-md-3 d-flex align-items-end" style="margin-top:30px;">
-      <button class="btn btn-primary w-100" onclick="addSet()">Thêm</button>
-    </div>
-  </div>
-
-  <table class="table table-bordered mt-4" style="text-align:center;">
-    <thead class="table-dark">
-      <tr>
-        <th>Loại Set</th>
-        <th>Số lượng</th>
-        <th>Hành động</th>
-      </tr>
-    </thead>
-    <tbody id="setTableBody">
-      <!-- Các dòng sẽ được thêm ở đây -->
-    </tbody>
-  </table>
-</div>
-
-        <div class="mt-4 text-center">
-          <button type="submit" class="btn-submit">Đặt bàn</button>
-        </div>
-      </form>
-    </div>
-
-    <div class="menu-section" id="menu">
-      <h4 class="menu-title">Thực đơn gợi ý</h4>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card h-100 menu-card">
-            <img src="https://scontent-sin6-2.xx.fbcdn.net/v/t1.15752-9/483635784_991512325807929_3711773061147219905_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_ohc=16zlPGlJbbIQ7kNvwHCATbE&_nc_oc=AdlfKIlJJqAIW9icflhdyRhADq_n5D4ib62LxFSeuoZadWmrAh-tgmJO08YZQMU4_fM&_nc_zt=23&_nc_ht=scontent-sin6-2.xx&oh=03_Q7cD2AH8Nkk2X0CN2KvuAQuw6bt_OwhlQG1Dtz9ZFeSuMbPFLg&oe=68312046" alt="Menu 1">
-            <div class="card-body">
-              <h5>Set TAE COURSE</h5>
-              <p>Thưởng thức trải nghiệm ẩm thực tinh tế với set TAE tại nhà hàng S79, nơi kết hợp hoàn hảo giữa kỹ thuật Teppanyaki hiện đại và hương vị truyền thống Nhật Bản. Từ hàu sống Miyagi tươi ngon, súp kem hạt dẻ ấm áp, đến bào ngư Teppanyaki sốt rong biển đặc trưng, và kết thúc bằng bánh Pháp cùng kem mát lạnh. Mỗi món ăn là một dấu ấn nghệ thuật vị giác, dành riêng cho những thực khách yêu sự khác biệt.
-
-Giá: 1.790.000 VND/người (chưa bao gồm phí phục vụ và thuế VAT)</p>
+                    <span
+                        style="margin-left:10px;font-size: 20px; font-style: italic; color: #ffffffcc; letter-spacing: 1px;">
+                        Japanese Teppanyaki
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#menu">Thực đơn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#checkin">Check-in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#booking">Đặt bàn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#footer">Liên hệ</a></li>
+                        <!-- Thêm mục Liên hệ -->
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card h-100 menu-card">
-            <img src="https://scontent-sin11-1.xx.fbcdn.net/v/t1.15752-9/483640264_567484222977144_2697811465320801263_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=-JV_a-_AEaoQ7kNvwGTATp9&_nc_oc=AdnOAxds7ZJmJ8znwlEdsMzafplccAaZxuhIxlpH0Sx25zObG5i4d0-wzEVUXQHppBI&_nc_zt=23&_nc_ht=scontent-sin11-1.xx&oh=03_Q7cD2AHbee7Vo6VCQB58ybN8WatjU5eg6OFJTZ1Gm14DB5sFFQ&oe=68310A0A" alt="Menu 2">
-            <div class="card-body">
-              <h5>Set KAORI COURSE</h5>
-              <p>Set KAORI là hành trình ẩm thực sang trọng dành cho những thực khách sành ăn, với điểm nhấn là món tôm hùm Teppanyaki sốt bơ Mỹ đầy quyến rũ và steak bò Wagyu mềm tan. Mỗi món ăn được chế biến công phu, từ súp kem hạt dẻ thơm ngậy đến trứng hấp gan ngỗng truffle tinh tế. Trọn vẹn vị giác, đậm đà bản sắc Nhật.
- Giá: 2.190.000 VND/người (chưa bao gồm phí phục vụ và thuế VAT)</p>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="row custom-card g-0" data-aos="zoom-in">
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="status-badge"><i class="bi bi-check-circle-fill"></i> Còn bàn</span>
+                    <div class="location-name">S79 - Japanese Teppanyaki</div>
+                    <div class="info-line mb-2"><i class="bi bi-geo-alt-fill"></i>Tầng 79, Landmark 81</div>
+                    <div class="info-line"><i class="bi bi-clock-fill"></i>11:00 – 23:00 hằng ngày</div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="card h-100 menu-card">
-            <img src="https://scontent-sin2-1.xx.fbcdn.net/v/t1.15752-9/482387232_1160660129177620_1291000779554002095_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_ohc=UPeCkYa0Zv0Q7kNvwE8M4aq&_nc_oc=Adlwfth-111o8uqBQXGcxPBYMSyp2eJXDEyDtkR44G-gyuC7TDkRQuHp3pJwBDpO2uM&_nc_zt=23&_nc_ht=scontent-sin2-1.xx&oh=03_Q7cD2AFOpMtEf0YRDPqKk0pSHpkPn1Wu290MqwNAPR7sRYFkOA&oe=68311DDB" alt="Menu 3">
-            <div class="card-body">
-              <h5>Set GIN COURSE</h5>
-              <p>Set GIN là lựa chọn hoàn hảo cho thực khách yêu thích sự tinh tế và đẳng cấp. Khởi đầu với cá hồi Na Uy hun khói dùng kèm trứng cá và bánh pancake Teppanyaki, tiếp nối bằng loạt món cao cấp như bào ngư sốt Tosaka, tôm hùm sốt bơ Mỹ và đỉnh cao là bò Wagyu mềm mọng nướng Teppanyaki. Thưởng thức trong không gian sang trọng, đây là hành trình ẩm thực đầy ấn tượng và đậm chất Nhật Bản.
-Giá: 2.590.000 VND/người (chưa bao gồm phí phục vụ và thuế VAT)</p>
+            <div class="col-md-5 img-col-wrapper">
+                <div class="img-col"></div>
             </div>
-          </div>
         </div>
-        
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="card h-100 menu-card">
-            <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t1.15752-9/482418430_1007053714697202_7206294370712971009_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=k1vf1L8qKMwQ7kNvwHlBWP2&_nc_oc=AdndikISKTCvJ1fFmAKAksoLn4IekD35dfNy5kOU2dx9-1La6TSq2h5Z8qA53sDBKL0&_nc_zt=23&_nc_ht=scontent-sin6-3.xx&oh=03_Q7cD2AETuvcH6WMZbqoshjWLaOxiay74GF4KE23iP_oepcX0QA&oe=68310F80" alt="Menu 3">
-            <div class="card-body">
-              <h5>Set KOBE COURSE</h5>
-              <p>Set KOBE là lựa chọn lý tưởng cho những ai yêu thích ẩm thực Nhật Bản thượng hạng. Hành trình bắt đầu với cá hồi Na Uy kèm trứng cá và bánh pancake Teppanyaki tinh tế, tiếp nối bằng súp hạt dẻ thơm bùi và trứng hấp gan ngỗng sốt Truffle sang trọng. Thực khách sẽ được chiêu đãi với sò điệp Hokkaido sốt Yuzu độc đáo, tôm hùm Teppanyaki đậm đà, và điểm nhấn là bò Kobe thượng hạng nướng trên bàn Teppanyaki. Kết thúc trọn vẹn bằng món tráng miệng Pháp ngọt ngào và trà hoặc cà phê thư giãn.Giá: 3.490.000 VND/người (chưa bao gồm phí phục vụ và thuế VAT)</p>
+
+        <div class="booking-card mt-4" id="booking" data-aos="fade-up" data-aos-offset="10">
+            <h4>Thông tin đặt bàn</h4>
+            <form>
+                <div class="row g-3" style="margin-bottom:10px;">
+                    <div class="col-md-6">
+                        <label for="customer-name" class="form-label">Người đặt bàn</label>
+                        <input type="text" class="form-control" id="customer-name" placeholder="Nhập họ tên" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone-number" class="form-label">Số điện thoại</label>
+                        <input type="tel" class="form-control" id="phone-number" placeholder="Nhập số điện thoại"
+                            pattern="[0-9]{10,11}" required>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="date" class="form-label">Ngày đặt</label>
+                        <input type="date" class="form-control" id="date" value="2025-01-01" min="2025-01-01"
+                            max="2025-12-31" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="time" class="form-label">Giờ đặt</label>
+                        <select class="form-select" id="time" required>
+                            <option value="">Chọn giờ</option>
+                            <!-- Thêm các khung giờ ở đây -->
+                            <option>18:00</option>
+                            <option>18:30</option>
+                            <option>19:00</option>
+                            <option>19:30</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="event-type" class="form-label">Loại tiệc</label>
+                        <select class="form-select" id="event-type" required>
+                            <option value="">🎉 Chọn loại tiệc</option>
+                            <option>💖 Hẹn hò ăn tối</option>
+                            <option>🎂 Sinh nhật</option>
+                            <option>📸 Kỷ niệm</option>
+                            <option>💍 Cầu hôn</option>
+                            <option>🤝 Gặp đối tác</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="guest-count" class="form-label">Số lượng người</label>
+                        <input type="number" class="form-control" id="guest-count" min="1" max="30" required>
+                    </div>
+                </div>
+                <div class="container mt-5">
+                    <h5 class="text-warning" style="text-align:center;">Chọn Set Menu</h5>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="setSelect" class="form-label">Loại Set</label>
+                            <select class="form-select" id="setSelect">
+                                <option value="" disabled selected>-- Chọn Set Menu --</option>
+                                <option value="Set TAE COURSE">Set TAE COURSE</option>
+                                <option value="Set KAORI COURSE">Set KAORI COURSE</option>
+                                <option value="Set GIN COURSE">Set GIN COURSE</option>
+                                <option value="Set KOBE COURSE">Set KOBE COURSE</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3" style="margin-top:12px;">
+                            <label for="setQuantity" class="form-label">Số lượng</label>
+                            <input type="number" class="form-control" id="setQuantity" min="1" value="1">
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end" style="margin-top:30px;">
+                            <button class="btn btn-primary w-100" onclick="addSet()">Thêm</button>
+                        </div>
+                    </div>
+
+                    <table class="table table-bordered mt-4" style="text-align:center;">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Loại Set</th>
+                                <th>Số lượng</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="setTableBody">
+                            <!-- Các dòng sẽ được thêm ở đây -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <button type="submit" class="btn-submit">Đặt bàn</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-section" id="menu">
+            <h4 class="menu-title">Thực đơn gợi ý</h4>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 menu-card">
+                        <img src="https://scontent-sin6-2.xx.fbcdn.net/v/t1.15752-9/483635784_991512325807929_3711773061147219905_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_ohc=16zlPGlJbbIQ7kNvwHCATbE&_nc_oc=AdlfKIlJJqAIW9icflhdyRhADq_n5D4ib62LxFSeuoZadWmrAh-tgmJO08YZQMU4_fM&_nc_zt=23&_nc_ht=scontent-sin6-2.xx&oh=03_Q7cD2AH8Nkk2X0CN2KvuAQuw6bt_OwhlQG1Dtz9ZFeSuMbPFLg&oe=68312046"
+                            alt="Menu 1">
+                        <div class="card-body">
+                            <h5>Set TAE COURSE</h5>
+                            <p>Thưởng thức trải nghiệm ẩm thực tinh tế với set TAE tại nhà hàng S79, nơi kết hợp hoàn
+                                hảo giữa kỹ thuật Teppanyaki hiện đại và hương vị truyền thống Nhật Bản. Từ hàu sống
+                                Miyagi tươi ngon, súp kem hạt dẻ ấm áp, đến bào ngư Teppanyaki sốt rong biển đặc trưng,
+                                và kết thúc bằng bánh Pháp cùng kem mát lạnh. Mỗi món ăn là một dấu ấn nghệ thuật vị
+                                giác, dành riêng cho những thực khách yêu sự khác biệt.
+
+                                Giá: 1.790.000 VND/người (chưa bao gồm phí phục vụ và thuế VAT)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 menu-card">
+                        <img src="https://scontent-sin11-1.xx.fbcdn.net/v/t1.15752-9/483640264_567484222977144_2697811465320801263_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=-JV_a-_AEaoQ7kNvwGTATp9&_nc_oc=AdnOAxds7ZJmJ8znwlEdsMzafplccAaZxuhIxlpH0Sx25zObG5i4d0-wzEVUXQHppBI&_nc_zt=23&_nc_ht=scontent-sin11-1.xx&oh=03_Q7cD2AHbee7Vo6VCQB58ybN8WatjU5eg6OFJTZ1Gm14DB5sFFQ&oe=68310A0A"
+                            alt="Menu 2">
+                        <div class="card-body">
+                            <h5>Set KAORI COURSE</h5>
+                            <p>Set KAORI là hành trình ẩm thực sang trọng dành cho những thực khách sành ăn, với điểm
+                                nhấn là món tôm hùm Teppanyaki sốt bơ Mỹ đầy quyến rũ và steak bò Wagyu mềm tan. Mỗi món
+                                ăn được chế biến công phu, từ súp kem hạt dẻ thơm ngậy đến trứng hấp gan ngỗng truffle
+                                tinh tế. Trọn vẹn vị giác, đậm đà bản sắc Nhật.
+                                Giá: 2.190.000 VND/người (chưa bao gồm phí phục vụ và thuế VAT)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 menu-card">
+                        <img src="https://scontent-sin2-1.xx.fbcdn.net/v/t1.15752-9/482387232_1160660129177620_1291000779554002095_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_ohc=UPeCkYa0Zv0Q7kNvwE8M4aq&_nc_oc=Adlwfth-111o8uqBQXGcxPBYMSyp2eJXDEyDtkR44G-gyuC7TDkRQuHp3pJwBDpO2uM&_nc_zt=23&_nc_ht=scontent-sin2-1.xx&oh=03_Q7cD2AFOpMtEf0YRDPqKk0pSHpkPn1Wu290MqwNAPR7sRYFkOA&oe=68311DDB"
+                            alt="Menu 3">
+                        <div class="card-body">
+                            <h5>Set GIN COURSE</h5>
+                            <p>Set GIN là lựa chọn hoàn hảo cho thực khách yêu thích sự tinh tế và đẳng cấp. Khởi đầu
+                                với cá hồi Na Uy hun khói dùng kèm trứng cá và bánh pancake Teppanyaki, tiếp nối bằng
+                                loạt món cao cấp như bào ngư sốt Tosaka, tôm hùm sốt bơ Mỹ và đỉnh cao là bò Wagyu mềm
+                                mọng nướng Teppanyaki. Thưởng thức trong không gian sang trọng, đây là hành trình ẩm
+                                thực đầy ấn tượng và đậm chất Nhật Bản.
+                                Giá: 2.590.000 VND/người (chưa bao gồm phí phục vụ và thuế VAT)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 menu-card">
+                        <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t1.15752-9/482418430_1007053714697202_7206294370712971009_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=k1vf1L8qKMwQ7kNvwHlBWP2&_nc_oc=AdndikISKTCvJ1fFmAKAksoLn4IekD35dfNy5kOU2dx9-1La6TSq2h5Z8qA53sDBKL0&_nc_zt=23&_nc_ht=scontent-sin6-3.xx&oh=03_Q7cD2AETuvcH6WMZbqoshjWLaOxiay74GF4KE23iP_oepcX0QA&oe=68310F80"
+                            alt="Menu 3">
+                        <div class="card-body">
+                            <h5>Set KOBE COURSE</h5>
+                            <p>Set KOBE là lựa chọn lý tưởng cho những ai yêu thích ẩm thực Nhật Bản thượng hạng. Hành
+                                trình bắt đầu với cá hồi Na Uy kèm trứng cá và bánh pancake Teppanyaki tinh tế, tiếp nối
+                                bằng súp hạt dẻ thơm bùi và trứng hấp gan ngỗng sốt Truffle sang trọng. Thực khách sẽ
+                                được chiêu đãi với sò điệp Hokkaido sốt Yuzu độc đáo, tôm hùm Teppanyaki đậm đà, và điểm
+                                nhấn là bò Kobe thượng hạng nướng trên bàn Teppanyaki. Kết thúc trọn vẹn bằng món tráng
+                                miệng Pháp ngọt ngào và trà hoặc cà phê thư giãn.Giá: 3.490.000 VND/người (chưa bao gồm
+                                phí phục vụ và thuế VAT)</p>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-          </div>
         </div>
-        
-        
-      </div>
+
+        <div class="checkin-section" id="checkin">
+            <h4 class="checkin-title">Khách hàng đã check-in</h4>
+            <div class="row g-4">
+                <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="checkin-card">
+                        <img src="https://scontent-sin2-3.xx.fbcdn.net/v/t39.30808-6/486078367_634842236063811_774295252520784011_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_ohc=Rojzdgjv56YQ7kNvwG_V9ly&_nc_oc=AdknTBx8waO-PV7K6LPKhdnGSqppY4sOeupMyk23EVw7gnRTh3nx-Ys8OhY4tEPg5JQ&_nc_zt=23&_nc_ht=scontent-sin2-3.xx&_nc_gid=0U6sIeYjwNsnsGTgkZAJ5Q&oh=00_AfHhvolx2cUstrVkRmkzvGTBIYPcAXRr5edzpjesN4o0sQ&oe=680FB112"
+                            alt="Check-in 1">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="checkin-card">
+                        <img src="https://scontent-sin11-1.xx.fbcdn.net/v/t39.30808-6/485385352_634653126082722_4559855280051219760_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=xhXFrKpRdg0Q7kNvwGdZzNj&_nc_oc=AdmMC0gKCDwL7I9Zt_f9R4CtZMtUrvRa8LJ09RWB7O5_sC_kic08qHN2fasP5r4g4mw&_nc_zt=23&_nc_ht=scontent-sin11-1.xx&_nc_gid=_YSopWvtoLGWs8thyy8ejQ&oh=00_AfGIGMnqNyPXxxJgcB_pTBPyLiP1jKseFcoFWn2LOIppXQ&oe=680F7620"
+                            alt="Check-in 2">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="checkin-card">
+                        <img src="https://scontent-sin2-3.xx.fbcdn.net/v/t39.30808-6/485755958_634223002792401_8594968779360691572_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=u9Kw5h0nN1QQ7kNvwFaKGhs&_nc_oc=AdkS5witn1da_QQ_VwwYh9Spm6NlY2HAAq5uhJ2gzXIpULy07l3I7fL38T20Ue14Eh4&_nc_zt=23&_nc_ht=scontent-sin2-3.xx&_nc_gid=mrs2lehAv0L60wKxt5vNow&oh=00_AfEorBzZda2kDjQTTY6PKYFocUNDjNyvkJ29CumnUn9IZQ&oe=680F9CEE"
+                            alt="Check-in 3">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="checkin-card">
+                        <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t39.30808-6/485092891_633157829565585_7682430804012785232_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=SYBVU-XLVKgQ7kNvwEgVWEH&_nc_oc=AdnJjZtUd1lGP9KiHkfiZ8IYnJ3HNavp6ieOn7tITzaeIslfdCjyhdaNBCp4p9hVETY&_nc_zt=23&_nc_ht=scontent-sin6-1.xx&_nc_gid=yhm5AD2OZWQ98LKPjAT9ig&oh=00_AfH97mkLnf5yQqCtOD45HLC2o59OJL-S9x-I6UF8FVIqAQ&oe=680FB5C1"
+                            alt="Check-in 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        function addSet() {
+            event.preventDefault(); // Ngăn trang cuộn lên
+            const setSelect = document.getElementById("setSelect");
+            const quantityInput = document.getElementById("setQuantity");
+            const tableBody = document.getElementById("setTableBody");
 
-    <div class="checkin-section" id="checkin">
-      <h4 class="checkin-title">Khách hàng đã check-in</h4>
-      <div class="row g-4">
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="checkin-card">
-            <img src="https://i.ibb.co/9kCGXDdz/decor1.jpg" alt="Check-in 1">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="checkin-card">
-            <img src="https://i.ibb.co/TxZhLhjX/decor2.jpg" alt="Check-in 2">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="checkin-card">
-            <img src="https://i.ibb.co/KxCqKLVS/decor3.jpg" alt="Check-in 3">
-          </div>
-        </div>
-      </div>
-    </div>
+            const selectedSet = setSelect.value;
+            const quantity = parseInt(quantityInput.value);
 
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-<script>
-  function addSet() {
-    event.preventDefault(); // Ngăn trang cuộn lên
-    const setSelect = document.getElementById("setSelect");
-    const quantityInput = document.getElementById("setQuantity");
-    const tableBody = document.getElementById("setTableBody");
+            if (!selectedSet || quantity < 1) {
+                alert("Vui lòng chọn Set Menu và nhập số lượng hợp lệ.");
+                return;
+            }
 
-    const selectedSet = setSelect.value;
-    const quantity = parseInt(quantityInput.value);
-
-    if (!selectedSet || quantity < 1) {
-      alert("Vui lòng chọn Set Menu và nhập số lượng hợp lệ.");
-      return;
-    }
-
-    // Tạo dòng mới trong bảng
-    const row = document.createElement("tr");
-    row.innerHTML = `
+            // Tạo dòng mới trong bảng
+            const row = document.createElement("tr");
+            row.innerHTML = `
       <td>${selectedSet}</td>
       <td>${quantity}</td>
       <td><button class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()">Xóa</button></td>
     `;
 
-    tableBody.appendChild(row);
+            tableBody.appendChild(row);
 
-    // Reset input
-    setSelect.value = "";
-    quantityInput.value = 1;
-  }
-</script>
-<footer id="footer">
-  <div class="footer-container">
-    <!-- Cột 1 -->
-    <div class="footer-col">
-      <h3>NHÀ HÀNG USSINA AGING BEEF & BAR</h3>
-      <p><i class="fas fa-location-dot"></i>Tầng L77, Tòa nhà Landmark 81, 720A Điện Biên Phủ,<br>Phường 22, Quận Bình Thạnh, Tp. HCM.</p>
-      <p><i class="fas fa-clock"></i>Thời gian phục vụ từ 11h đến 23h.</p>
-      <p><i class="fas fa-phone"></i>089.667.2861 (VN – JP)<br><i class="fas fa-phone"></i>0287.307.9793 (EN)</p>
-      <p><i class="fas fa-envelope"></i>ussina.landmark81@ussinavietnam.com</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fas fa-store"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-      </div>
-      <img class="gov-icon" src="https://dangkywebvoibocongthuong.com/wp-content/uploads/2021/11/logo-da-thong-bao-bo-cong-thuong.png" alt="Đã thông báo">
-    </div>
+            // Reset input
+            setSelect.value = "";
+            quantityInput.value = 1;
+        }
+    </script>
+    <footer id="footer">
+        <div class="footer-container">
+            <!-- Cột 1 -->
+            <div class="footer-col">
+                <h3>NHÀ HÀNG S79 - Japanese Teppanyaki</h3>
+                <p><i class="fas fa-location-dot"></i>Tầng L79, Tòa nhà Landmark 81, 720A Điện Biên Phủ, Phường 22,
+                    Quận Bình Thạnh, Tp. HCM.</p>
+                <p><i class="fas fa-clock"></i>Thời gian phục vụ từ 11h đến 23h.</p>
+                <p><i class="fas fa-phone"></i>089.667.2861 (VN – JP)<br><i class="fas fa-phone"></i>0287.307.9793 (EN)
+                </p>
+                <p><i class="fas fa-envelope"></i>s79skylinedining@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fas fa-store"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <img class="gov-icon"
+                    src="https://dangkywebvoibocongthuong.com/wp-content/uploads/2021/11/logo-da-thong-bao-bo-cong-thuong.png"
+                    alt="Đã thông báo">
+            </div>
 
-    <!-- Cột 2 -->
-    <div class="footer-col">
-      <h3>ĐĂNG KÝ NHẬN ƯU ĐÃI</h3>
-      <p>Đăng ký nhận thư điện tử từ chúng tôi để nhận ngay những ưu đãi tốt nhất</p>
-      <form class="email-form">
-        <input type="email" placeholder="Nhập email của bạn" required>
-        <button type="submit">ĐĂNG KÝ</button>
-      </form>
-      <div style="margin-top: 20px;">
-        <strong>NHÀ HÀNG USSINA - VINCOM LANDMARK 81</strong>
-        <p><i class="fas fa-file-alt"></i>Giấy CNĐKDN: 031225168-002 – Ngày cấp: 01/04/2019<br>
-        <i class="fas fa-building"></i>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở Kế hoạch và Đầu tư TP.HCM<br>
-        <i class="fas fa-map-marker-alt"></i>Địa chỉ đăng ký: Tầng L77, Tòa nhà Landmark 81, 720A Điện Biên Phủ, P. 22, Q. Bình Thạnh, TP.HCM</p>
-      </div>
-    </div>
+            <!-- Cột 2 -->
+            <div class="footer-col">
+                <h3>ĐĂNG KÝ NHẬN ƯU ĐÃI</h3>
+                <p>Đăng ký nhận thư điện tử từ chúng tôi để nhận ngay những ưu đãi tốt nhất</p>
+                <form class="email-form">
+                    <input type="email" placeholder="Nhập email của bạn" required>
+                    <button type="submit">ĐĂNG KÝ</button>
+                </form>
+                <div style="margin-top: 20px;">
+                    <strong>CÔNG TY CỔ PHẦN S79 Japanese Teppanyaki</strong>
+                    <p><i class="fas fa-file-alt"></i>Giấy CNĐKDN: 031225168-002 – Ngày cấp: 01/04/2017<br>
+                        <i class="fas fa-building"></i>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở Kế hoạch và Đầu tư
+                        TP.HCM<br>
+                        <i class="fas fa-map-marker-alt"></i>Địa chỉ đăng ký: Tầng L79, Tòa nhà Landmark 81, 720A Điện
+                        Biên Phủ, P. 22, Q. Bình Thạnh, TP.HCM
+                    </p>
+                </div>
+            </div>
 
-    <!-- Cột 3 -->
-    <div class="footer-col">
-      <h3>Giới Thiệu</h3>
-      <p>Con đường dẫn tới không gian ẩm thực trên mây.
-Toạ lạc trên tầng 79 của toà nhà Landmark, hành trình đi tới không gian ẩm thực trên mây sẽ bắt đầu ngay bây giờ. 
-Nếu bạn đã sẵn sàng, hãy cùng chúng tôi bắt đầu chuyến đi nhé!</p>
-    </div>
-  </div>
-</footer>
+            <!-- Cột 3 -->
+            <div class="footer-col">
+                <h3>Giới Thiệu</h3>
+                <p>Con đường dẫn tới không gian ẩm thực trên mây.
+                    Toạ lạc trên tầng 79 của toà nhà Landmark, hành trình đi tới không gian ẩm thực trên mây sẽ bắt đầu
+                    ngay bây giờ.
+                    Nếu bạn đã sẵn sàng, hãy cùng chúng tôi bắt đầu chuyến đi nhé!</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
