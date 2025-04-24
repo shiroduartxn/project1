@@ -530,6 +530,21 @@
         AOS.init();
     </script>
     <script>
+        // Lấy ngày hôm nay
+        const today = new Date();
+
+        // Chỉnh lại định dạng ngày theo kiểu yyyy-mm-dd
+        const day = today.getDate().toString().padStart(2, '0');
+        const month = (today.getMonth() + 1).toString().padStart(2, '0');
+        const year = today.getFullYear();
+
+        // Kết hợp thành định dạng yyyy-mm-dd
+        const todayDate = `${year}-${month}-${day}`;
+
+        // Cập nhật giá trị cho trường input
+        document.getElementById('date').value = todayDate;
+    </script>
+    <script>
         function addSet() {
             event.preventDefault(); // Ngăn trang cuộn lên
             const setSelect = document.getElementById("setSelect");
