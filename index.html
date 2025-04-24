@@ -335,6 +335,16 @@
     <div class="booking-card mt-4" id="booking" data-aos="fade-up" data-aos-offset="10">
       <h4>Thông tin đặt bàn</h4>
       <form>
+      <div class="row g-3" style="margin-bottom:10px;">
+  <div class="col-md-6">
+    <label for="customer-name" class="form-label">Người đặt bàn</label>
+    <input type="text" class="form-control" id="customer-name" placeholder="Nhập họ tên" required>
+  </div>
+  <div class="col-md-6">
+    <label for="phone-number" class="form-label">Số điện thoại</label>
+    <input type="tel" class="form-control" id="phone-number" placeholder="Nhập số điện thoại" pattern="[0-9]{10,11}" required>
+  </div>
+</div>
         <div class="row g-3">
           <div class="col-md-6">
             <label for="date" class="form-label">Ngày đặt</label>
@@ -371,13 +381,13 @@
       <label for="setSelect" class="form-label">Loại Set</label>
       <select class="form-select" id="setSelect">
         <option value="" disabled selected>-- Chọn Set Menu --</option>
-        <option value="Set Hẹn hò">Set TAE COURSE</option>
-        <option value="Set Sinh nhật">Set KAORI COURSE</option>
-        <option value="Set Đối tác">Set GIN COURSE</option>
-        <option value="Set Đối tác">Set KOBE COURSE</option>
+        <option value="Set TAE COURSE">Set TAE COURSE</option>
+        <option value="Set KAORI COURSE">Set KAORI COURSE</option>
+        <option value="Set GIN COURSE">Set GIN COURSE</option>
+        <option value="Set KOBE COURSE">Set KOBE COURSE</option>
       </select>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style="margin-top:12px;" >
       <label for="setQuantity" class="form-label">Số lượng</label>
       <input type="number" class="form-control" id="setQuantity" min="1" value="1">
     </div>
@@ -386,7 +396,7 @@
     </div>
   </div>
 
-  <table class="table table-bordered mt-4">
+  <table class="table table-bordered mt-4" style="text-align:center;">
     <thead class="table-dark">
       <tr>
         <th>Loại Set</th>
