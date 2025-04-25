@@ -310,18 +310,24 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
 
-        /* Modal content với chiều rộng và chiều cao là 95% màn hình */
+        /* Mặc định: điện thoại (mobile-first) */
         .modal-content {
             width: 95vw;
-            /* 95% chiều rộng màn hình */
-            height: 95vh;
-            /* 95% chiều cao màn hình */
-            overflow-y: auto;
-            /* Thêm cuộn dọc khi nội dung dài */
             max-width: 95vw;
-            /* Đảm bảo chiều rộng tối đa là 95% màn hình */
+            height: auto;
             max-height: 95vh;
-            /* Đảm bảo chiều cao tối đa là 95% màn hình */
+            overflow-y: auto;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        /* Máy tính: màn hình từ 768px trở lên */
+        @media (min-width: 768px) {
+            .modal-content {
+                width: 50vw;
+                max-width: 50vw;
+            }
         }
     </style>
 </head>
