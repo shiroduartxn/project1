@@ -416,23 +416,23 @@
             <form>
                 <div class="row g-3" style="margin-bottom:10px;">
                     <div class="col-md-6">
-                        <label for="customer-name" class="form-label">Người đặt bàn</label>
+                        <label for="customer-name" class="form-label">Người đặt bàn <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="customer-name" placeholder="Nhập họ tên" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="phone-number" class="form-label">Số điện thoại</label>
+                        <label for="phone-number" class="form-label">Số điện thoại <span class="text-danger">*</span></label>
                         <input type="tel" class="form-control" id="phone-number" placeholder="Nhập số điện thoại"
                             pattern="[0-9]{10,11}" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-6">
-                        <label for="date" class="form-label">Ngày đặt</label>
+                        <label for="date" class="form-label">Ngày đặt <span class="text-danger">*</span></label>
                         <input type="date" class="form-control" id="date" value="2025-01-01" min="2025-01-01"
                             max="2025-12-31" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="time" class="form-label">Giờ đặt</label>
+                        <label for="time" class="form-label">Giờ đặt <span class="text-danger">*</span></label>
                         <select class="form-select" id="time" required>
                             <option value="">Chọn giờ</option>
                             <!-- Thêm các khung giờ ở đây -->
@@ -443,7 +443,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="event-type" class="form-label">Loại tiệc</label>
+                        <label for="event-type" class="form-label">Loại tiệc <span class="text-danger">*</span></label>
                         <select class="form-select" id="event-type" required>
                             <option value="">🎉 Chọn loại tiệc</option>
                             <option>💖 Hẹn hò ăn tối</option>
@@ -454,7 +454,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="guest-count" class="form-label">Số lượng người</label>
+                        <label for="guest-count" class="form-label">Số lượng người <span class="text-danger">*</span></label>
                         <input type="number" class="form-control" id="guest-count" min="1" max="30" required>
                     </div>
                 </div>
@@ -498,6 +498,12 @@
                     <textarea class="form-control shadow-sm rounded-3 border border-secondary-subtle" id="noteInput"
                         rows="4" placeholder="Ví dụ: Vị trí ngồi, view , món ăn...(nếu có)"></textarea>
                 </div>
+                <div class="d-flex align-items-center my-4">
+                    <hr class="flex-grow-1 border-0" style="height: 1px; background-color: #d0a96f;">
+                    <i class="bi bi-flower2 px-3" style="color: #d0a96f;"></i>
+                    <hr class="flex-grow-1 border-0" style="height: 1px; background-color: #d0a96f;">
+                </div>
+
                 <div class="mt-4 text-center">
                     <button id="open-modal-btn" class="btn-submit">Đặt bàn</button>
                 </div>
