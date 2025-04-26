@@ -654,7 +654,7 @@
 
                 <div class="flex items-center justify-center gap-2 mt-3">
                     <span>Mã đặt bàn:</span>
-                    <span class="text-xl font-bold text-yellow-300 tracking-wide">AR24134932</span>
+                    <span class="text-xl font-bold text-yellow-300 tracking-wide" id="madatban">AR24134932</span>
                 </div>
 
                 <!-- Mã QR -->
@@ -808,7 +808,11 @@
             const customers = await res.json();
             currentCustomer = customers.find(c => !c.name && c.status === false);
 
-            if (currentCustomer) qrImage.src = currentCustomer.qrUrl;
+            if (currentCustomer) {
+                qrImage.src = currentCustomer.qrUrl;
+                document.getElementById('madatban').textContent = currentCustomer.madatban;
+            }
+
 
             confirmBtn.addEventListener('click', async () => {
                 if (!currentCustomer) return;
