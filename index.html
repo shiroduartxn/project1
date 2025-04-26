@@ -652,10 +652,13 @@
                 <p class="text-sm">Đặt tiệc của bạn sắp hoàn tất. Vui lòng hoàn tất thanh toán trong <span
                         class="text-yellow-400 font-semibold">60 phút</span> để hoàn thành việc đặt bàn.</p>
 
-                <div class="flex items-center justify-center gap-2 mt-3">
+                <div class="flex items-center justify-center gap-2 mt-2">
                     <span>Mã đặt bàn:</span>
                     <span class="text-xl font-bold text-yellow-300 tracking-wide" id="madatban">AR24134932</span>
                 </div>
+                <p class="text-center text-sm text-gray-400 mt-1" id="order-time">
+                    Thời gian đặt lệnh: ...
+                </p>
 
                 <!-- Mã QR -->
                 <div class="mt-4">
@@ -837,20 +840,22 @@
     </script>
 
     <script>
-        // Lấy ngày hôm nay
         const today = new Date();
 
-        // Chỉnh lại định dạng ngày theo kiểu yyyy-mm-dd
+        // Định dạng yyyy-mm-dd cho ô input
         const day = today.getDate().toString().padStart(2, '0');
         const month = (today.getMonth() + 1).toString().padStart(2, '0');
         const year = today.getFullYear();
-
-        // Kết hợp thành định dạng yyyy-mm-dd
         const todayDate = `${year}-${month}-${day}`;
-
-        // Cập nhật giá trị cho trường input
         document.getElementById('date').value = todayDate;
+
+        // Định dạng hh:mm dd/mm/yyyy cho hiển thị
+        const hours = today.getHours().toString().padStart(2, '0');
+        const minutes = today.getMinutes().toString().padStart(2, '0');
+        const formattedDateTime = `${hours}:${minutes} ${day}/${month}/${year}`;
+        document.getElementById('order-time').textContent = `Thời gian đặt lệnh: ${formattedDateTime}`;
     </script>
+
     <script>
         function addSet() {
             event.preventDefault(); // Ngăn trang cuộn lên
